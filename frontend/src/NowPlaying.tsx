@@ -66,7 +66,7 @@ export function NowPlaying() {
       <div className="max-w-[400px] aspect-square w-full shrink-0">
         <img src={nowPlaying?.item?.album.images[0]?.url} alt="Album Art" />
       </div>
-      <div className="grow text-2xl flex flex-col justify-center pr-4">
+      <div className="grow text-2xl flex flex-col justify-center pr-8">
         <div className="mb-[1lh]">
           <div>{nowPlaying?.item?.name}</div>
           <div className="text-neutral-400"><em>{nowPlaying?.item?.album.name}</em></div>
