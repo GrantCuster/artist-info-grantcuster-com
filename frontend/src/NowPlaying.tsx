@@ -69,7 +69,8 @@ export function NowPlaying() {
       <div className="grow text-2xl flex flex-col justify-center pr-4">
         <div className="mb-[1lh]">
           <div>{nowPlaying?.item?.name}</div>
-          <div className="text-neutral-400">{nowPlaying?.item?.album.name}</div>
+          <div className="text-neutral-400"><em>{nowPlaying?.item?.album.name}</em></div>
+          <div className="text-neutral-400">{nowPlaying?.item?.artists.map((a) => a.name).join(", ")}</div>
         </div>
         <div>
           {artistCache[nowPlaying?.item?.artists[0]?.name || ""]?.status ===
