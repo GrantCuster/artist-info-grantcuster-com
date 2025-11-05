@@ -12,7 +12,7 @@
     "dev:backend": "npm run dev --workspace=backend",
     "start": "npm run start --workspace=backend",
     "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
-    "install:all": "npm install",
+    "install:all": "npm install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

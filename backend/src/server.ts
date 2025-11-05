@@ -70,16 +70,8 @@ async function getAccessToken(): Promise<string> {
 }
 
 const app = express();
-app.use(
-  cors({
-    origin: isProduction
-      ? "https://herb-sunday-player.grantcuster.com"
-      : "http://127.0.0.1:4000",
-    credentials: true,
-  }),
-);
 app.use(express.json({ limit: "5mb" }));
-const PORT = process.env.NODE_ENV === "production" ? 8005 : 4001;
+const PORT = process.env.NODE_ENV === "production" ? 8006 : 4001;
 
 app.use(
   express.static(path.join(__dirname, "public"), {

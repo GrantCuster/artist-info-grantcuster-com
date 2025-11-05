@@ -63,7 +63,7 @@ export function NowPlaying() {
 
   return (
     <div className="flex gap-5 overflow-hidden">
-      <div className="max-w-[400px] w-full shrink-0">
+      <div className="max-w-[400px] aspect-square w-full shrink-0">
         <img src={nowPlaying?.item?.album.images[0]?.url} alt="Album Art" />
       </div>
       <div className="grow text-lg flex flex-col justify-center pr-4">
