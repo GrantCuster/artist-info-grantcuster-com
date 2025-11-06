@@ -61,16 +61,23 @@ export function NowPlaying() {
     }
   }, [nowPlaying]);
 
-  return (
+  const currentImageUrl = nowPlaying?.item?.album.images[0]?.url;
+  const isPlaying = nowPlaying?.is_playing;
+
+  return isPlaying ? (
     <div className="flex gap-8 overflow-hidden">
       <div className="max-w-[400px] aspect-square w-full shrink-0">
-        <img src={nowPlaying?.item?.album.images[0]?.url} alt="Album Art" />
+        {currentImageUrl && <img src={currentImageUrl} />}
       </div>
       <div className="grow text-2xl flex flex-col justify-center pr-8">
         <div className="mb-[1lh]">
           <div>{nowPlaying?.item?.name}</div>
-          <div className="text-neutral-400"><em>{nowPlaying?.item?.album.name}</em></div>
-          <div className="text-neutral-400">{nowPlaying?.item?.artists.map((a) => a.name).join(", ")}</div>
+          <div className="text-neutral-400">
+            <em>{nowPlaying?.item?.album.name}</em>
+          </div>
+          <div className="text-neutral-400">
+            {nowPlaying?.item?.artists.map((a) => a.name).join(", ")}
+          </div>
         </div>
         <div>
           {artistCache[nowPlaying?.item?.artists[0]?.name || ""]?.status ===
@@ -90,5 +97,5 @@ export function NowPlaying() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }
